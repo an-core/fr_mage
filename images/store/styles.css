@@ -3792,7 +3792,7 @@ input[readonly] {
         padding: 1px 4px !important;
         white-space: nowrap !important;
         min-width: max-content !important;
-        font-size: 0.8rem !important;
+        font-size: 1rem !important;
     }
 
     .modal-specs li:last-child {
