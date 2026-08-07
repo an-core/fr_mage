@@ -3354,7 +3354,7 @@ input[readonly] {
     .announcement-bar .marquee-text {
         display: inline-block;
         white-space: nowrap;
-        animation: marquee 12s linear infinite;
+        animation: marquee 40s linear infinite;
         padding-left: 100%;
         font-size: 0.8rem;
         font-weight: 500;
