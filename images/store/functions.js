@@ -26,8 +26,6 @@
           "Комплектация PRO": "Стабилизатор изображения + радиоинхронизация"
       };
 
-      const MODAL_CACHE_KEY = 'firemag_modal_cache';
-
       let products = [];
       let defaultProducts = [];
       let announcementHiddenByScroll = false;
