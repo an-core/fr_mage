@@ -2029,7 +2029,7 @@
           showToast('Товар "' + product.name + '"' + colorName + ' добавлен в корзину!');
       });
 
-      const GITHUB_BASE_URL = 'https://an-core.github.io/f_mage/';
+      const GITHUB_BASE_URL = 'https://an-core.github.io/fr_mage/';
 
       async function loadAllImages() {
           const catalog = document.getElementById('catalogContainer');
