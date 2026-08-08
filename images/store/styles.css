@@ -77,11 +77,11 @@
     --price-color3: #222222;
     --shadow-card: 0 12px 30px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2);
     --shadow-card-hover: 0 20px 40px rgba(0, 0, 0, 0.4);
-    --bg-photo: #06090e73;
+    --bg-photo: #1f273473;
     --bg-photo-hover: #1a2538;
-    --bg-modal: #070a0d;
-    --bg-modal-header: #141a24;
-    --bg-modal-specs: #121a2a;
+    --bg-modal: #0f1010;
+    --bg-modal-header: #0e1114;
+    --bg-modal-specs: #101114;
     --border-modal: #334155;
     --border-specs: #334155;
     --border-spec-item: #334155;
