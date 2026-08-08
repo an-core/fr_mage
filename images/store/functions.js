@@ -425,6 +425,39 @@
           }, 0);
       }
 
+      function updateCheckoutTotal() {
+          const totalItemsPrice = getTotalPriceWithOptions();
+          const selected = document.querySelector('input[name="delivery"]:checked');
+          let deliveryCost = 0;
+          let deliveryText = '';
+
+          if (selected) {
+              switch (selected.value) {
+                  case 'pickup':
+                      deliveryCost = 0;
+                      deliveryText = 'Самовывоз (0 ₽)';
+                      break;
+                  case 'moscow':
+                      deliveryCost = 300;
+                      deliveryText = 'Доставка по Москве (300 ₽)';
+                      break;
+                  case 'cdek':
+                      deliveryCost = 0;
+                      deliveryText = 'СДЭК (рассчитывается отдельно)';
+                      break;
+                  default:
+                      deliveryCost = 0;
+                      deliveryText = '—';
+              }
+          }
+
+          const totalWithDelivery = totalItemsPrice + deliveryCost;
+
+          document.getElementById('checkoutTotalAmount').textContent = totalItemsPrice.toLocaleString('ru-RU') + ' ₽';
+          document.getElementById('checkoutDeliveryInfo').textContent = deliveryText;
+          document.getElementById('checkoutGrandTotal').textContent = totalWithDelivery.toLocaleString('ru-RU') + ' ₽';
+      }
+
       function updateModalPrice(product) {
           const checkboxes = window._modalCheckboxes || [];
           const basePrice = parsePrice(product.price);
@@ -2332,6 +2365,7 @@
           checkoutModal.classList.add('active');
           hideAnnouncementForModal();
           closeCartModal();
+          updateCheckoutTotal();
       }
 
       function closeCartModal() {
@@ -2870,6 +2904,10 @@
 
           deliveryRadios.forEach(radio => radio.addEventListener('change', toggleDelivery));
           toggleDelivery();
+
+          document.querySelectorAll('input[name="delivery"]').forEach(radio => {
+              radio.addEventListener('change', updateCheckoutTotal);
+          });
 
           async function loadPickupPoints(city) {
               if (!city)
