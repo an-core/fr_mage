@@ -273,7 +273,7 @@ body {
     transition: background 0.3s;
 }
 .cart-icon .count.has-items {
-    color: var (--color-items);
+    color: var(--color-items);
     border-radius: 60px;
     padding: 0 8px;
     min-width: 18px;
