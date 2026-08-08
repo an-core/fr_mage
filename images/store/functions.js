@@ -526,19 +526,18 @@
           const cartIcon = document.querySelector('.cart-icon');
           if (!countEl || !cartIcon) return;
 
-          const total = getTotalItems();
-          countEl.textContent = total;
+          const totalItems = getTotalItems();
+          const totalSum = getTotalPriceWithOptions();
 
-          if (total === 0) {
-              countEl.classList.remove('has-items');
-              countEl.style.background = '';
+          if (totalItems === 0) {
+              countEl.style.display = 'none';
               cartIcon.classList.remove('has-items');
               if (hintEl) {
                   hintEl.style.display = 'inline';
               }
           } else {
-              countEl.classList.add('has-items');
-              countEl.style.background = '';
+              countEl.style.display = 'inline-flex';
+              countEl.textContent = totalSum.toLocaleString('ru-RU') + ' ₽';
               cartIcon.classList.add('has-items');
               if (hintEl) {
                   hintEl.style.display = 'none';
@@ -2284,7 +2283,7 @@
                   setTimeout(() => {
                       partnersCollapsible.style.display = 'none';
                   }, 300);
-				  }
+              }
           });
       }
 

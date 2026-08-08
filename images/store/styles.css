@@ -272,15 +272,20 @@ body {
     justify-content: center;
     transition: background 0.3s;
 }
+
+/* Сумма с фоном при наличии товаров в корзине*/
 .cart-icon .count.has-items {
-    color: var(--color-items);
+    background: #ef4444;
+    color: white;
     border-radius: 60px;
-    padding: 0 8px;
-    min-width: 18px;
-    height: 50px;
+    padding: 2px 12px;
+    min-width: 20px;
+    height: auto;
     display: inline-flex;
-	font-size: 1.1rem;
-	font-weight: bold;
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.4;
+    white-space: nowrap;
 }
 .cart-empty-hint {
     font-size: 1rem;
