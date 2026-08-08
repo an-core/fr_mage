@@ -14,39 +14,6 @@
           file: 'images/store/icons/gutsei.png',
           url: 'https://gutsei.ru'
       }, ];
-	  
-	 const jugglingNewsBtn = document.getElementById('jugglingNewsBtn');
-const fireNewsBtn = document.getElementById('fireNewsBtn');
-const festivalsBtn = document.getElementById('festivalsBtn');
-
-if (jugglingNewsBtn) {
-    jugglingNewsBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        openJugglingNews();
-    });
-}
-
-if (fireNewsBtn) {
-    fireNewsBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        openFireNews();
-    });
-}
-
-if (festivalsBtn) {
-    festivalsBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        openFestivals();
-    });
-}
-
-if (festivalsBtn) {
-    festivalsBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        closeMenu();
-        showToast('🎪 Фестивали – скоро появится информация!');
-    });
-}
 
       const glossary = {
           "Радиосинхронизация": "Радиосинхронизация позволяет синхронизировать несколько единиц реквизита по радиоканалу. Достаточно нажать кнопку на одном устройстве, и все остальные автоматически подстроятся под его режим, что упрощает управление шоу-программами.",
@@ -2526,13 +2493,36 @@ if (festivalsBtn) {
       });
 
       const howToBuyBtn = document.getElementById('howToBuyBtn');
+      const deliveryBtn = document.getElementById('deliveryBtn');
+      const pickupBtn = document.getElementById('pickupBtn');
+      const jugglingNewsBtn = document.getElementById('jugglingNewsBtn');
+      const fireNewsBtn = document.getElementById('fireNewsBtn');
+      const festivalsBtn = document.getElementById('festivalsBtn');
+
       const howToBuyModal = document.getElementById('howToBuyModal');
+      const deliveryModal = document.getElementById('deliveryModal');
+      const pickupModal = document.getElementById('pickupModal');
+      const jugglingNewsModal = document.getElementById('jugglingNewsModal');
+      const fireNewsModal = document.getElementById('fireNewsModal');
+      const festivalsModal = document.getElementById('festivalsModal');
+
       const howToBuyCloseBtn = document.getElementById('howToBuyCloseBtn');
       const howToBuyFooterClose = document.getElementById('howToBuyFooterClose');
+      const deliveryCloseBtn = document.getElementById('deliveryCloseBtn');
+      const deliveryFooterClose = document.getElementById('deliveryFooterClose');
+      const pickupCloseBtn = document.getElementById('pickupCloseBtn');
+      const pickupFooterClose = document.getElementById('pickupFooterClose');
+      const jugglingNewsCloseBtn = document.getElementById('jugglingNewsCloseBtn');
+      const jugglingNewsFooterClose = document.getElementById('jugglingNewsFooterClose');
+      const fireNewsCloseBtn = document.getElementById('fireNewsCloseBtn');
+      const fireNewsFooterClose = document.getElementById('fireNewsFooterClose');
+      const festivalsCloseBtn = document.getElementById('festivalsCloseBtn');
+      const festivalsFooterClose = document.getElementById('festivalsFooterClose');
 
       function openHowToBuy() {
+          menuWasOpenBeforeModal = slideMenu.classList.contains('open');
+          if (menuWasOpenBeforeModal) closeMenu();
           hideAnnouncementForModal();
-          closeMenu();
           howToBuyModal.classList.add('active');
           document.body.style.overflow = 'hidden';
       }
@@ -2541,159 +2531,229 @@ if (festivalsBtn) {
           howToBuyModal.classList.remove('active');
           document.body.style.overflow = '';
           showAnnouncementAfterModal();
+          if (menuWasOpenBeforeModal) {
+              slideMenu.classList.add('open');
+              hamburger.classList.add('active');
+              overlay.classList.add('active');
+              document.body.style.overflow = 'hidden';
+              menuWasOpenBeforeModal = false;
+          }
+      }
+
+      function openDelivery() {
+          menuWasOpenBeforeModal = slideMenu.classList.contains('open');
+          if (menuWasOpenBeforeModal) closeMenu();
+          hideAnnouncementForModal();
+          deliveryModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+      }
+
+      function closeDelivery() {
+          deliveryModal.classList.remove('active');
+          document.body.style.overflow = '';
+          showAnnouncementAfterModal();
+          if (menuWasOpenBeforeModal) {
+              slideMenu.classList.add('open');
+              hamburger.classList.add('active');
+              overlay.classList.add('active');
+              document.body.style.overflow = 'hidden';
+              menuWasOpenBeforeModal = false;
+          }
+      }
+
+      function openPickup() {
+          menuWasOpenBeforeModal = slideMenu.classList.contains('open');
+          if (menuWasOpenBeforeModal) closeMenu();
+          hideAnnouncementForModal();
+          pickupModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+      }
+
+      function closePickup() {
+          pickupModal.classList.remove('active');
+          document.body.style.overflow = '';
+          showAnnouncementAfterModal();
+          if (menuWasOpenBeforeModal) {
+              slideMenu.classList.add('open');
+              hamburger.classList.add('active');
+              overlay.classList.add('active');
+              document.body.style.overflow = 'hidden';
+              menuWasOpenBeforeModal = false;
+          }
+      }
+
+      function openJugglingNews() {
+          menuWasOpenBeforeModal = slideMenu.classList.contains('open');
+          if (menuWasOpenBeforeModal) closeMenu();
+          hideAnnouncementForModal();
+          jugglingNewsModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+      }
+
+      function closeJugglingNews() {
+          jugglingNewsModal.classList.remove('active');
+          document.body.style.overflow = '';
+          showAnnouncementAfterModal();
+          if (menuWasOpenBeforeModal) {
+              slideMenu.classList.add('open');
+              hamburger.classList.add('active');
+              overlay.classList.add('active');
+              document.body.style.overflow = 'hidden';
+              menuWasOpenBeforeModal = false;
+          }
+      }
+
+      function openFireNews() {
+          menuWasOpenBeforeModal = slideMenu.classList.contains('open');
+          if (menuWasOpenBeforeModal) closeMenu();
+          hideAnnouncementForModal();
+          fireNewsModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+      }
+
+      function closeFireNews() {
+          fireNewsModal.classList.remove('active');
+          document.body.style.overflow = '';
+          showAnnouncementAfterModal();
+          if (menuWasOpenBeforeModal) {
+              slideMenu.classList.add('open');
+              hamburger.classList.add('active');
+              overlay.classList.add('active');
+              document.body.style.overflow = 'hidden';
+              menuWasOpenBeforeModal = false;
+          }
+      }
+
+      function openFestivals() {
+          menuWasOpenBeforeModal = slideMenu.classList.contains('open');
+          if (menuWasOpenBeforeModal) closeMenu();
+          hideAnnouncementForModal();
+          festivalsModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+      }
+
+      function closeFestivals() {
+          festivalsModal.classList.remove('active');
+          document.body.style.overflow = '';
+          showAnnouncementAfterModal();
+          if (menuWasOpenBeforeModal) {
+              slideMenu.classList.add('open');
+              hamburger.classList.add('active');
+              overlay.classList.add('active');
+              document.body.style.overflow = 'hidden';
+              menuWasOpenBeforeModal = false;
+          }
       }
 
       if (howToBuyBtn) {
           howToBuyBtn.addEventListener('click', function(e) {
-              menuWasOpenBeforeModal = slideMenu.classList.contains('open');
-              hideAnnouncementForModal();
               e.stopPropagation();
               openHowToBuy();
           });
       }
 
-      if (howToBuyCloseBtn) {
-          howToBuyCloseBtn.addEventListener('click', closeHowToBuy);
+      if (deliveryBtn) {
+          deliveryBtn.addEventListener('click', function(e) {
+              e.stopPropagation();
+              openDelivery();
+          });
       }
-      if (howToBuyFooterClose) {
-          howToBuyFooterClose.addEventListener('click', closeHowToBuy);
+
+      if (pickupBtn) {
+          pickupBtn.addEventListener('click', function(e) {
+              e.stopPropagation();
+              openPickup();
+          });
       }
+
+      if (jugglingNewsBtn) {
+          jugglingNewsBtn.addEventListener('click', function(e) {
+              e.stopPropagation();
+              openJugglingNews();
+          });
+      }
+
+      if (fireNewsBtn) {
+          fireNewsBtn.addEventListener('click', function(e) {
+              e.stopPropagation();
+              openFireNews();
+          });
+      }
+
+      if (festivalsBtn) {
+          festivalsBtn.addEventListener('click', function(e) {
+              e.stopPropagation();
+              openFestivals();
+          });
+      }
+
+      if (howToBuyCloseBtn) howToBuyCloseBtn.addEventListener('click', closeHowToBuy);
+      if (howToBuyFooterClose) howToBuyFooterClose.addEventListener('click', closeHowToBuy);
+
+      if (deliveryCloseBtn) deliveryCloseBtn.addEventListener('click', closeDelivery);
+      if (deliveryFooterClose) deliveryFooterClose.addEventListener('click', closeDelivery);
+
+      if (pickupCloseBtn) pickupCloseBtn.addEventListener('click', closePickup);
+      if (pickupFooterClose) pickupFooterClose.addEventListener('click', closePickup);
+
+      if (jugglingNewsCloseBtn) jugglingNewsCloseBtn.addEventListener('click', closeJugglingNews);
+      if (jugglingNewsFooterClose) jugglingNewsFooterClose.addEventListener('click', closeJugglingNews);
+
+      if (fireNewsCloseBtn) fireNewsCloseBtn.addEventListener('click', closeFireNews);
+      if (fireNewsFooterClose) fireNewsFooterClose.addEventListener('click', closeFireNews);
+
+      if (festivalsCloseBtn) festivalsCloseBtn.addEventListener('click', closeFestivals);
+      if (festivalsFooterClose) festivalsFooterClose.addEventListener('click', closeFestivals);
 
       if (howToBuyModal) {
           howToBuyModal.addEventListener('click', function(e) {
-              if (e.target === this)
-                  closeHowToBuy();
-          });
-      }
-
-      document.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape' && howToBuyModal && howToBuyModal.classList.contains('active')) {
-              closeHowToBuy();
-          }
-      });
-
-      const deliveryBtn = document.getElementById('deliveryBtn');
-      const deliveryModal = document.getElementById('deliveryModal');
-      const deliveryCloseBtn = document.getElementById('deliveryCloseBtn');
-      const deliveryFooterClose = document.getElementById('deliveryFooterClose');
-
-      if (deliveryBtn && deliveryModal) {
-          deliveryBtn.addEventListener('click', function(e) {
-              menuWasOpenBeforeModal = slideMenu.classList.contains('open');
-              e.stopPropagation();
-              closeMenu();
-              deliveryModal.classList.add('active');
-              document.body.style.overflow = 'hidden';
-              hideAnnouncementForModal();
-          });
-      }
-
-      if (deliveryCloseBtn) {
-          deliveryCloseBtn.addEventListener('click', function() {
-              deliveryModal.classList.remove('active');
-              document.body.style.overflow = '';
-              showAnnouncementAfterModal();
-          });
-      }
-      if (deliveryFooterClose) {
-          deliveryFooterClose.addEventListener('click', function() {
-              deliveryModal.classList.remove('active');
-              document.body.style.overflow = '';
-              showAnnouncementAfterModal();
+              if (e.target === this) closeHowToBuy();
           });
       }
       if (deliveryModal) {
           deliveryModal.addEventListener('click', function(e) {
-              if (e.target === this) {
-                  deliveryModal.classList.remove('active');
-                  document.body.style.overflow = '';
-                  showAnnouncementAfterModal();
-              }
+              if (e.target === this) closeDelivery();
+          });
+      }
+      if (pickupModal) {
+          pickupModal.addEventListener('click', function(e) {
+              if (e.target === this) closePickup();
+          });
+      }
+      if (jugglingNewsModal) {
+          jugglingNewsModal.addEventListener('click', function(e) {
+              if (e.target === this) closeJugglingNews();
+          });
+      }
+      if (fireNewsModal) {
+          fireNewsModal.addEventListener('click', function(e) {
+              if (e.target === this) closeFireNews();
+          });
+      }
+      if (festivalsModal) {
+          festivalsModal.addEventListener('click', function(e) {
+              if (e.target === this) closeFestivals();
           });
       }
 
-      const pickupBtn = document.getElementById('pickupBtn');
-      const pickupModal = document.getElementById('pickupModal');
-      const pickupCloseBtn = document.getElementById('pickupCloseBtn');
-      const pickupFooterClose = document.getElementById('pickupFooterClose');
-	  
-	  // Модалки для новых пунктов меню
-const jugglingNewsModal = document.getElementById('jugglingNewsModal');
-const fireNewsModal = document.getElementById('fireNewsModal');
-const festivalsModal = document.getElementById('festivalsModal');
+      document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+              if (howToBuyModal && howToBuyModal.classList.contains('active')) closeHowToBuy();
+              if (deliveryModal && deliveryModal.classList.contains('active')) closeDelivery();
+              if (pickupModal && pickupModal.classList.contains('active')) closePickup();
+              if (jugglingNewsModal && jugglingNewsModal.classList.contains('active')) closeJugglingNews();
+              if (fireNewsModal && fireNewsModal.classList.contains('active')) closeFireNews();
+              if (festivalsModal && festivalsModal.classList.contains('active')) closeFestivals();
+          }
+      });
 
-const jugglingNewsCloseBtn = document.getElementById('jugglingNewsCloseBtn');
-const jugglingNewsFooterClose = document.getElementById('jugglingNewsFooterClose');
-const fireNewsCloseBtn = document.getElementById('fireNewsCloseBtn');
-const fireNewsFooterClose = document.getElementById('fireNewsFooterClose');
-const festivalsCloseBtn = document.getElementById('festivalsCloseBtn');
-const festivalsFooterClose = document.getElementById('festivalsFooterClose');
-
-// Функции открытия
-function openJugglingNews() {
-    hideAnnouncementForModal();
-    closeMenu();
-    jugglingNewsModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function openFireNews() {
-    hideAnnouncementForModal();
-    closeMenu();
-    fireNewsModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function openFestivals() {
-    hideAnnouncementForModal();
-    closeMenu();
-    festivalsModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-// Функции закрытия
-function closeJugglingNews() {
-    jugglingNewsModal.classList.remove('active');
-    document.body.style.overflow = '';
-    showAnnouncementAfterModal();
-}
-
-function closeFireNews() {
-    fireNewsModal.classList.remove('active');
-    document.body.style.overflow = '';
-    showAnnouncementAfterModal();
-}
-
-function closeFestivals() {
-    festivalsModal.classList.remove('active');
-    document.body.style.overflow = '';
-    showAnnouncementAfterModal();
-}
-
-jugglingNewsCloseBtn.addEventListener('click', closeJugglingNews);
-jugglingNewsFooterClose.addEventListener('click', closeJugglingNews);
-fireNewsCloseBtn.addEventListener('click', closeFireNews);
-fireNewsFooterClose.addEventListener('click', closeFireNews);
-festivalsCloseBtn.addEventListener('click', closeFestivals);
-festivalsFooterClose.addEventListener('click', closeFestivals);
-
-jugglingNewsModal.addEventListener('click', function(e) {
-    if (e.target === this) closeJugglingNews();
-});
-fireNewsModal.addEventListener('click', function(e) {
-    if (e.target === this) closeFireNews();
-});
-festivalsModal.addEventListener('click', function(e) {
-    if (e.target === this) closeFestivals();
-});
-
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        if (jugglingNewsModal.classList.contains('active')) closeJugglingNews();
-        if (fireNewsModal.classList.contains('active')) closeFireNews();
-        if (festivalsModal.classList.contains('active')) closeFestivals();
-    }
-});
+      document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+              if (jugglingNewsModal.classList.contains('active')) closeJugglingNews();
+              if (fireNewsModal.classList.contains('active')) closeFireNews();
+              if (festivalsModal.classList.contains('active')) closeFestivals();
+          }
+      });
 
       if (pickupBtn && pickupModal) {
           pickupBtn.addEventListener('click', function(e) {
