@@ -14,6 +14,39 @@
           file: 'images/store/icons/gutsei.png',
           url: 'https://gutsei.ru'
       }, ];
+	  
+	 const jugglingNewsBtn = document.getElementById('jugglingNewsBtn');
+const fireNewsBtn = document.getElementById('fireNewsBtn');
+const festivalsBtn = document.getElementById('festivalsBtn');
+
+if (jugglingNewsBtn) {
+    jugglingNewsBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        openJugglingNews();
+    });
+}
+
+if (fireNewsBtn) {
+    fireNewsBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        openFireNews();
+    });
+}
+
+if (festivalsBtn) {
+    festivalsBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        openFestivals();
+    });
+}
+
+if (festivalsBtn) {
+    festivalsBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeMenu();
+        showToast('🎪 Фестивали – скоро появится информация!');
+    });
+}
 
       const glossary = {
           "Радиосинхронизация": "Радиосинхронизация позволяет синхронизировать несколько единиц реквизита по радиоканалу. Достаточно нажать кнопку на одном устройстве, и все остальные автоматически подстроятся под его режим, что упрощает управление шоу-программами.",
@@ -2583,6 +2616,84 @@
       const pickupModal = document.getElementById('pickupModal');
       const pickupCloseBtn = document.getElementById('pickupCloseBtn');
       const pickupFooterClose = document.getElementById('pickupFooterClose');
+	  
+	  // Модалки для новых пунктов меню
+const jugglingNewsModal = document.getElementById('jugglingNewsModal');
+const fireNewsModal = document.getElementById('fireNewsModal');
+const festivalsModal = document.getElementById('festivalsModal');
+
+const jugglingNewsCloseBtn = document.getElementById('jugglingNewsCloseBtn');
+const jugglingNewsFooterClose = document.getElementById('jugglingNewsFooterClose');
+const fireNewsCloseBtn = document.getElementById('fireNewsCloseBtn');
+const fireNewsFooterClose = document.getElementById('fireNewsFooterClose');
+const festivalsCloseBtn = document.getElementById('festivalsCloseBtn');
+const festivalsFooterClose = document.getElementById('festivalsFooterClose');
+
+// Функции открытия
+function openJugglingNews() {
+    hideAnnouncementForModal();
+    closeMenu();
+    jugglingNewsModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function openFireNews() {
+    hideAnnouncementForModal();
+    closeMenu();
+    fireNewsModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function openFestivals() {
+    hideAnnouncementForModal();
+    closeMenu();
+    festivalsModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Функции закрытия
+function closeJugglingNews() {
+    jugglingNewsModal.classList.remove('active');
+    document.body.style.overflow = '';
+    showAnnouncementAfterModal();
+}
+
+function closeFireNews() {
+    fireNewsModal.classList.remove('active');
+    document.body.style.overflow = '';
+    showAnnouncementAfterModal();
+}
+
+function closeFestivals() {
+    festivalsModal.classList.remove('active');
+    document.body.style.overflow = '';
+    showAnnouncementAfterModal();
+}
+
+jugglingNewsCloseBtn.addEventListener('click', closeJugglingNews);
+jugglingNewsFooterClose.addEventListener('click', closeJugglingNews);
+fireNewsCloseBtn.addEventListener('click', closeFireNews);
+fireNewsFooterClose.addEventListener('click', closeFireNews);
+festivalsCloseBtn.addEventListener('click', closeFestivals);
+festivalsFooterClose.addEventListener('click', closeFestivals);
+
+jugglingNewsModal.addEventListener('click', function(e) {
+    if (e.target === this) closeJugglingNews();
+});
+fireNewsModal.addEventListener('click', function(e) {
+    if (e.target === this) closeFireNews();
+});
+festivalsModal.addEventListener('click', function(e) {
+    if (e.target === this) closeFestivals();
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        if (jugglingNewsModal.classList.contains('active')) closeJugglingNews();
+        if (fireNewsModal.classList.contains('active')) closeFireNews();
+        if (festivalsModal.classList.contains('active')) closeFestivals();
+    }
+});
 
       if (pickupBtn && pickupModal) {
           pickupBtn.addEventListener('click', function(e) {

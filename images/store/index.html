@@ -128,6 +128,25 @@
                         <div class="partners-logos" id="partnersLogos"></div>
                     </div>
                 </div>
+				<!-- Новые пункты меню -->
+<div class="menu-item">
+    <button class="menu-toggle" id="jugglingNewsBtn">
+        <span class="icon">📰</span>
+        <span>Жонглерские новости</span>
+    </button>
+</div>
+<div class="menu-item">
+    <button class="menu-toggle" id="fireNewsBtn">
+        <span class="icon">🔥</span>
+        <span>Новости фаерщика</span>
+    </button>
+</div>
+<div class="menu-item">
+    <button class="menu-toggle" id="festivalsBtn">
+        <span class="icon">🎪</span>
+        <span>Фестивали</span>
+    </button>
+</div>
                 <div class="menu-item settings-item">
                     <span class="menu-label settings-toggle">⚙️ Настройки сайта</span>
                     <div class="settings-block" id="settingsBlock" style="display:none;">
@@ -475,6 +494,63 @@
         </div>
         <div id="termTooltip"></div>
         <div id="glossaryTooltip"></div>
+		
+		<!-- Модалка: Жонглерские новости -->
+<div class="modal-overlay modal-overlay--small" id="jugglingNewsModal">
+    <div class="modal" style="max-width: 600px;">
+        <div class="modal-header">
+            <h2>📰 Жонглерские новости</h2>
+            <button class="modal-close" id="jugglingNewsCloseBtn"></button>
+        </div>
+        <div class="modal-body" style="padding: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 1.2rem; font-size: 0.95rem; line-height: 1.6;">
+                <p>Здесь будут публиковаться новости из мира жонглирования: новые трюки, мастер-классы, интервью с известными жонглёрами и анонсы мероприятий.</p>
+                <p>Следите за обновлениями!</p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-close-modal" id="jugglingNewsFooterClose">Закрыть</button>
+        </div>
+    </div>
+</div>
+
+<!-- Модалка: Новости фаерщика -->
+<div class="modal-overlay modal-overlay--small" id="fireNewsModal">
+    <div class="modal" style="max-width: 600px;">
+        <div class="modal-header">
+            <h2>🔥 Новости фаерщика</h2>
+            <button class="modal-close" id="fireNewsCloseBtn"></button>
+        </div>
+        <div class="modal-body" style="padding: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 1.2rem; font-size: 0.95rem; line-height: 1.6;">
+                <p>Новости из мира файер-шоу: новые техники, безопасность, обзоры оборудования, интервью с артистами и анонсы фестивалей.</p>
+                <p>Оставайтесь в курсе!</p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-close-modal" id="fireNewsFooterClose">Закрыть</button>
+        </div>
+    </div>
+</div>
+
+<!-- Модалка: Фестивали -->
+<div class="modal-overlay modal-overlay--small" id="festivalsModal">
+    <div class="modal" style="max-width: 600px;">
+        <div class="modal-header">
+            <h2>🎪 Фестивали</h2>
+            <button class="modal-close" id="festivalsCloseBtn"></button>
+        </div>
+        <div class="modal-body" style="padding: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 1.2rem; font-size: 0.95rem; line-height: 1.6;">
+                <p>Информация о предстоящих фестивалях жонглёров, фаерщиков и цирковых артистов.</p>
+                <p>Расписание, участники, билеты – всё здесь!</p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-close-modal" id="festivalsFooterClose">Закрыть</button>
+        </div>
+    </div>
+</div>
     </body>
     <script>
         function hideLoader() {
