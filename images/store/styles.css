@@ -2525,7 +2525,10 @@ body,
 }
 
 @media (max-width: 600px) {
-    /* Кнопки в корзине */
+    body {
+        overflow-x: hidden;
+    }
+	/* Кнопки в корзине */
     .cart-actions .btn-primary,
     .cart-actions .btn-secondary {
         padding: 0.25rem 0.8rem !important;
@@ -2668,7 +2671,10 @@ body,
     #glossaryModal.modal-overlay--small .modal-header,
     #glossaryModal.modal-overlay--small .modal-footer { padding: 0.8rem 1.2rem !important; }
     /* Бегущая строка */
-    .announcement-bar {
+     .top-bar {
+		padding: 8px 12px;
+    }
+	.announcement-bar {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -2734,6 +2740,8 @@ body,
     .cart-icon svg {
         width: 20px;
         height: 20px;
+		padding: 6px 10px;
+		margin-right: -4px;
     }
     .slide-menu {
         width: 100%;
