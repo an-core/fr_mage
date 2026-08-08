@@ -2284,6 +2284,27 @@ input[readonly] {
     75%  { border-color: #ffaa00; box-shadow: 0 0 6px #ffaa00, 0 0 12px #ffaa00, 0 0 20px rgba(255,170,0,0.3); }
     100% { border-color: #ff00cc; box-shadow: 0 0 6px #ff00cc, 0 0 12px #ff00cc, 0 0 20px rgba(255,0,204,0.3); }
 }
+
+/* для корзины с товарами */
+@keyframes neonBorderCart {
+    0%   { border-color: #ff00cc; box-shadow: 0 0 6px #ff00cc, 0 0 12px #ff00cc; }
+    25%  { border-color: #00ccff; box-shadow: 0 0 6px #00ccff, 0 0 12px #00ccff; }
+    50%  { border-color: #00ff66; box-shadow: 0 0 6px #00ff66, 0 0 12px #00ff66; }
+    75%  { border-color: #ffaa00; box-shadow: 0 0 6px #ffaa00, 0 0 12px #ffaa00; }
+    100% { border-color: #ff00cc; box-shadow: 0 0 6px #ff00cc, 0 0 12px #ff00cc; }
+}
+
+[data-theme="dark"] .cart-icon.has-items {
+    border: 2px solid #ff00cc;
+    animation: neonBorderCart 4s linear infinite;
+    box-shadow: 0 0 6px #ff00cc, 0 0 12px #ff00cc;
+    transition: background 0.2s, transform 0.1s;
+}
+
+[data-theme="dark"] .cart-icon.has-items:hover {
+    box-shadow: 0 0 12px #ff00cc, 0 0 24px #ff00cc;
+    background: var(--bg-category-hover);
+}
 @keyframes popIn {
     from { transform: scale(.8); opacity: 0; }
     to   { transform: scale(1); opacity: 1; }
