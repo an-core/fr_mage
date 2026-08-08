@@ -2723,7 +2723,7 @@ body,
     }
     #logoImage {
         max-width: 130px;
-        margin-top: 5px;
+        margin-top: -35px;
     }
     .header-wrapper { margin-top: 70px; }
     .header-left h1 {
