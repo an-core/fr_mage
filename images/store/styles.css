@@ -40,6 +40,7 @@
     --cart-control-hover: #dce2ec;
     --success-green: #22c55e;
     --bg-menu: #ffffff;
+	--color-items: #1e293b;
     --color-swatch-border: #d1d5db;
     --color-swatch-shadow: rgba(0,0,0,0.12);
     --neon-glow-color: rgba(59,130,246,0.7);
@@ -104,6 +105,7 @@
     --cart-control-hover: #475569;
     --success-green: #4ade80;
     --bg-menu: #0c0f14;
+	--color-items: #e2e8f0;
     --color-swatch-border: #4b5563;
     --color-swatch-shadow: rgba(0,0,0,0.4);
 }
@@ -271,7 +273,7 @@ body {
     transition: background 0.3s;
 }
 .cart-icon .count.has-items {
-    color: white;
+    color: var (--color-items);
     border-radius: 60px;
     padding: 0 8px;
     min-width: 18px;
