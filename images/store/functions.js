@@ -538,7 +538,7 @@
               }
           } else {
               countEl.classList.add('has-items');
-              countEl.style.background = '#ef4444';
+              countEl.style.background = '';
               cartIcon.classList.add('has-items');
               if (hintEl) {
                   hintEl.style.display = 'none';
