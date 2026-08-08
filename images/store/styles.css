@@ -65,7 +65,7 @@
     --bg-body: #0c0e10;
     --bg-card: #1e232c;
     --bg-card-hover: #1a2030;
-    --border-card: #535458;
+    --border-card: #1e212c;
     --border-card-hover: #7b7c7c4f;
     --text-primary: #f1f5f9;
     --text-secondary: #e2e8f0;
@@ -89,7 +89,7 @@
     --btn-close-hover: #5e6e9529;
     --btn-close-text: #e2e8f0;
     --overlay-bg: rgba(0, 0, 0, 0.75);
-    --bg-category: #1f252e;
+    --bg-category: #15181c;
     --bg-category-hover: #171b20;
     --bg-category-active: #3b82f6;
     --text-category: #e2e8f0;
@@ -126,6 +126,7 @@ body {
     color: var(--text-primary);
     position: relative;
     z-index: 1;
+	overflow-x: hidden;
 }
 
 .container {
@@ -165,22 +166,23 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     background: var(--bg-category);
-    border: 1px solid var(--border-card);
-    border-radius: 30%;
-    padding: 12px 10px;
+    border: 2px solid #ff00cc;
+    border-radius: 50%;
+    padding: 10px 8px;
     z-index: 101;
-    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.1s;
-    box-shadow: var(--shadow-card);
+    box-shadow: 0 0 6px #ff00cc, 0 0 12px #ff00cc;
+    animation: neonBorder 4s linear infinite;
+    flex-shrink: 0;
+    transition: background 0.2s, transform 0.1s;
 }
 
 .hamburger:hover {
     background: var(--bg-category-hover);
-    border-color: var(--border-card-hover);
-    box-shadow: var(--shadow-card-hover);
+    box-shadow: 0 0 12px #ff00cc, 0 0 24px #ff00cc;
 }
 
 .hamburger:active {
@@ -206,6 +208,29 @@ body {
 
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
+}
+
+@keyframes neonBorder {
+    0% {
+        border-color: #ff00cc;
+        box-shadow: 0 0 6px #ff00cc, 0 0 12px #ff00cc, 0 0 20px rgba(255, 0, 204, 0.3);
+    }
+    25% {
+        border-color: #00ccff;
+        box-shadow: 0 0 6px #00ccff, 0 0 12px #00ccff, 0 0 20px rgba(0, 204, 255, 0.3);
+    }
+    50% {
+        border-color: #00ff66;
+        box-shadow: 0 0 6px #00ff66, 0 0 12px #00ff66, 0 0 20px rgba(0, 255, 102, 0.3);
+    }
+    75% {
+        border-color: #ffaa00;
+        box-shadow: 0 0 6px #ffaa00, 0 0 12px #ffaa00, 0 0 20px rgba(255, 170, 0, 0.3);
+    }
+    100% {
+        border-color: #ff00cc;
+        box-shadow: 0 0 6px #ff00cc, 0 0 12px #ff00cc, 0 0 20px rgba(255, 0, 204, 0.3);
+    }
 }
 
 /* CART ICON */
@@ -258,7 +283,7 @@ body {
 }
 
 .cart-icon .count.has-items {
-    background: #ef4444;
+    background: #rgb(40 137 56) !important;
     color: white;
     border-radius: 60px;
     padding: 0 8px;
