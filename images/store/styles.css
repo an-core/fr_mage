@@ -2740,8 +2740,8 @@ body,
     .cart-icon svg {
         width: 20px;
         height: 20px;
-		padding: 6px 10px;
-		margin-right: -4px;
+		padding: 0 1px;
+		margin-right:15px;
     }
     .slide-menu {
         width: 100%;
