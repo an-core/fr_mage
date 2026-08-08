@@ -523,8 +523,8 @@
       function updateCartUI() {
           const countEl = document.getElementById('cartCount');
           const hintEl = document.querySelector('.cart-empty-hint');
-          if (!countEl)
-              return;
+          const cartIcon = document.querySelector('.cart-icon');
+          if (!countEl || !cartIcon) return;
 
           const total = getTotalItems();
           countEl.textContent = total;
@@ -532,12 +532,14 @@
           if (total === 0) {
               countEl.classList.remove('has-items');
               countEl.style.background = '';
+              cartIcon.classList.remove('has-items');
               if (hintEl) {
                   hintEl.style.display = 'inline';
               }
           } else {
               countEl.classList.add('has-items');
               countEl.style.background = '#ef4444';
+              cartIcon.classList.add('has-items');
               if (hintEl) {
                   hintEl.style.display = 'none';
               }
@@ -2282,7 +2284,7 @@
                   setTimeout(() => {
                       partnersCollapsible.style.display = 'none';
                   }, 300);
-              }
+				  }
           });
       }
 
