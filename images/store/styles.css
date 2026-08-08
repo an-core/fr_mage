@@ -164,24 +164,27 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 20px;
-    height: 17px;
+    align-items: center;
+    width: 44px;
+    height: 44px;
     cursor: pointer;
-    background: var(--bg-card);
+    background: var(--bg-category);
     border: 1px solid var(--border-card);
-    border-radius: 8px;
-    padding: 8px 10px;
+    border-radius: 30%;
+    padding: 12px 10px;
     z-index: 101;
-    transition: border-color 0.2s, background 0.2s;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.1s;
+    box-shadow: var(--shadow-card);
 }
 
 .hamburger:hover {
-    border-color: var(--border-card-hover);
     background: var(--bg-category-hover);
+    border-color: var(--border-card-hover);
+    box-shadow: var(--shadow-card-hover);
 }
 
 .hamburger:active {
-    transform: scale(0.95);
+    transform: scale(0.92);
 }
 
 .hamburger span {
