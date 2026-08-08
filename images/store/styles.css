@@ -2733,7 +2733,7 @@ body {
 }
 
 /* FIRE PARTICLES (огоньки) */
-.fire-particles {
+#fire-particles {
     position: fixed;
     top: 0;
     left: 0;
@@ -2746,7 +2746,7 @@ body {
     transition: opacity 1s;
 }
 
-[data-theme="dark"] .fire-particles {
+[data-theme="dark"] #fire-particles {
     opacity: 1;
 }
 
